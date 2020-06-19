@@ -5,6 +5,6 @@ Browser test automation using Cypress.io
 
 - Automated visual regression testing
 
-- Automated function tests
+- Automated functional tests
 
 - Reporting with mochawesome
