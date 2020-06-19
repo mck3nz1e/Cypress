@@ -1,9 +1,11 @@
 describe("Practice Form - Name Field Tests", () => {
 
-    it("Verifys the User Name form label is correct", () => {
+    beforeEach(function () {
         cy.visit("/");
         cy.navigateToForm();
+    })
 
+    it("Verifys the User Name form label is correct", () => {
         cy.get('#userName-label').should('have.text', 'Name')
     });
 
@@ -26,4 +28,5 @@ describe("Practice Form - Name Field Tests", () => {
     it("This is an example of a failed test", () => {
         cy.get("#lastName").should("have.value", "FAIL");
     });
-});
+})
+
