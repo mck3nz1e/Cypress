@@ -1,0 +1,208 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-06-19T15:05:26.454Z",
+    "end": "2020-06-19T15:05:37.122Z",
+    "duration": 10668,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cdae3bb3-5ee7-419e-8f91-a594c958db48",
+      "title": "",
+      "fullFile": "cypress\\integration\\practiceForm\\nameField_spec.js",
+      "file": "cypress\\integration\\practiceForm\\nameField_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "82759450-c1ee-4643-b321-df0890cf1321",
+          "title": "Practice Form - Name Field Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verifys the User Name form label is correct",
+              "fullTitle": "Practice Form - Name Field Tests Verifys the User Name form label is correct",
+              "timedOut": null,
+              "duration": 2493,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.navigateToForm();\ncy.get('#userName-label').should('have.text', 'Name');",
+              "err": {},
+              "uuid": "a43c00eb-6572-40f2-9051-6e5c54161e1a",
+              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifys the First Name form field shadow text is correct",
+              "fullTitle": "Practice Form - Name Field Tests Verifys the First Name form field shadow text is correct",
+              "timedOut": null,
+              "duration": 127,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#firstName').should('have.attr', 'placeholder', 'First Name');",
+              "err": {},
+              "uuid": "fdf28b3e-bba1-488f-ae03-946c43b6b04a",
+              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifys the First Name form field can accept input",
+              "fullTitle": "Practice Form - Name Field Tests Verifys the First Name form field can accept input",
+              "timedOut": null,
+              "duration": 282,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#firstName\").type(\"Scott\").should(\"have.value\", \"Scott\");",
+              "err": {},
+              "uuid": "fe564afb-685c-423b-be03-e559dba70ecf",
+              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifys the Last Name form field shadow text is correct",
+              "fullTitle": "Practice Form - Name Field Tests Verifys the Last Name form field shadow text is correct",
+              "timedOut": null,
+              "duration": 114,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#lastName').should('have.attr', 'placeholder', 'Last Name');",
+              "err": {},
+              "uuid": "8b3817af-563a-443b-8e37-3fd8890b2dfd",
+              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifys the Last Name form field can accept input",
+              "fullTitle": "Practice Form - Name Field Tests Verifys the Last Name form field can accept input",
+              "timedOut": null,
+              "duration": 361,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#lastName\").type(\"McKenzie\").should(\"have.value\", \"McKenzie\");",
+              "err": {},
+              "uuid": "e4356ca2-8ade-4e5b-ba28-d44abb375ea2",
+              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "This is an example of a failed test",
+              "fullTitle": "Practice Form - Name Field Tests This is an example of a failed test",
+              "timedOut": null,
+              "duration": 7094,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"../cypress/snapshots/actual/practiceForm\\\\nameField_spec.js/Practice Form - Name Field Tests -- This is an example of a failed test (failed).png\"",
+              "code": "cy.get(\"#lastName\").should(\"have.value\", \"FAIL\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected '<input#lastName..mr-sm-2.form-control>' to have value 'FAIL', but the value was 'McKenzie'",
+                "estack": "AssertionError: Timed out retrying: expected '<input#lastName..mr-sm-2.form-control>' to have value 'FAIL', but the value was 'McKenzie'\n    at Context.eval (http://www.demoqa.com/__cypress/tests?p=cypress\\integration\\practiceForm\\nameField_spec.js:23:25)",
+                "diff": "- 'McKenzie'\n+ 'FAIL'\n"
+              },
+              "uuid": "d848120e-9bf4-49eb-a7b4-434dc1d20d78",
+              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a43c00eb-6572-40f2-9051-6e5c54161e1a",
+            "fdf28b3e-bba1-488f-ae03-946c43b6b04a",
+            "fe564afb-685c-423b-be03-e559dba70ecf",
+            "8b3817af-563a-443b-8e37-3fd8890b2dfd",
+            "e4356ca2-8ade-4e5b-ba28-d44abb375ea2"
+          ],
+          "failures": [
+            "d848120e-9bf4-49eb-a7b4-434dc1d20d78"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10471,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

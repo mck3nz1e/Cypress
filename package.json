@@ -1,0 +1,37 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "Browser test automation using Cypress.io",
+  "main": "index.js",
+  "dependencies": {
+    "axe-core": "^3.5.5",
+    "cypress": "^4.8.0",
+    "cypress-axe": "^0.8.1",
+    "cypress-multi-reporters": "^1.4.0",
+    "cypress-visual-regression": "^1.3.1",
+    "mocha": "^8.0.1",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.1.0",
+    "mochawesome-report-generator": "^5.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "clean:report": "rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "pretest": "npm run clean:report",
+    "combine-report": "npx mochawesome-merge 'cypress/reports/mocha/*.json' > Cypress_Demo_Report.json",
+    "generate-report": "npx marge Cypress_Demo_Report.json",
+    "posttest": "npm run combine-report && npm run generate-report",
+    "cypress": "npm run combine-reports && npm run generate-report",
+    "test": "cypress run || npm run posttest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mck3nz1e/Cypress.git"
+  },
+  "author": "Scott McKenzie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mck3nz1e/Cypress/issues"
+  },
+  "homepage": "https://github.com/mck3nz1e/Cypress#readme"
+}
