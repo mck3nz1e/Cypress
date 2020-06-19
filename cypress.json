@@ -1,0 +1,20 @@
+{
+        "defaultCommandTimeout": 5000,
+        "reporter": "cypress-multi-reporters",
+        "reporterOptions": {
+            "reporterEnabled": "mochawesome",
+            "mochawesomeReporterOptions": {
+                "reportDir": "cypress/reports/mocha",
+                "quite": true,
+                "overwrite": false,
+                "html": false,
+                "json": true,
+                "timestamp": "mmddyyyy_HHMMss"
+            }
+        },
+        
+          "screenshotsFolder": "cypress/snapshots/actual",
+          "trashAssetsBeforeRuns": true,
+      
+    "baseUrl":"http://www.demoqa.com/"
+}
