@@ -11,6 +11,10 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
+const compareSnapshotCommand = require('cypress-visual-regression/dist/command');
+ 
+compareSnapshotCommand();
+
 
 Cypress.Commands.add("navigateToForm", () => { 
     cy.get('.category-cards > :nth-child(2)').click()
