@@ -1,15 +1,15 @@
 {
   "stats": {
-    "suites": 2,
-    "tests": 7,
-    "passes": 5,
+    "suites": 4,
+    "tests": 9,
+    "passes": 7,
     "pending": 0,
     "failures": 2,
-    "start": "2020-06-19T15:05:47.815Z",
-    "end": "2020-06-19T15:05:47.816Z",
-    "duration": 21199,
-    "testsRegistered": 7,
-    "passPercent": 71.42857142857143,
+    "start": "2020-06-22T09:34:52.015Z",
+    "end": "2020-06-22T09:34:52.015Z",
+    "duration": 30252,
+    "testsRegistered": 9,
+    "passPercent": 77.77777777777777,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "9d7892ce-e97a-4992-a05e-541d85c72d06",
+      "uuid": "ef71bfd0-18fc-4c64-adf5-4b3bae7929b1",
       "title": "",
       "fullFile": "cypress\\integration\\practiceForm\\accessibility_spec.js",
       "file": "cypress\\integration\\practiceForm\\accessibility_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1fe9013c-8a42-412d-b9d6-2b40dc139500",
+          "uuid": "c62145a7-7990-42da-964d-f33ce05fafb2",
           "title": "Practice Form - Accessibility Tests",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Verifys no WCAG violations on page load",
               "fullTitle": "Practice Form - Accessibility Tests Verifys no WCAG violations on page load",
               "timedOut": null,
-              "duration": 10728,
+              "duration": 3539,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -48,11 +48,11 @@
               "code": "cy.visit(\"/\");\ncy.navigateToForm();\ncy.injectAxe();\ncy.get('#userName-label').should('be.visible');\ncy.checkA11y(null, {\n  runOnly: {\n    type: 'tag',\n    values: ['wcag2a', 'wcag2aa']\n  }\n});",
               "err": {
                 "message": "AssertionError: 5 accessibility violations were detected: expected 5 to equal 0",
-                "estack": "AssertionError: 5 accessibility violations were detected: expected 5 to equal 0\n    at Context.eval (http://www.demoqa.com/__cypress/tests?p=cypress\\support\\index.js:72:443712)",
+                "estack": "AssertionError: 5 accessibility violations were detected: expected 5 to equal 0\n    at Context.eval (http://www.demoqa.com/__cypress/tests?p=cypress\\support\\index.js:75:443712)",
                 "diff": null
               },
-              "uuid": "8f990d7f-a5fd-4483-af0f-7fc3730b876d",
-              "parentUUID": "1fe9013c-8a42-412d-b9d6-2b40dc139500",
+              "uuid": "7c506a7a-2d3f-46bf-a707-32c04b90a0bf",
+              "parentUUID": "c62145a7-7990-42da-964d-f33ce05fafb2",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "8f990d7f-a5fd-4483-af0f-7fc3730b876d"
+            "7c506a7a-2d3f-46bf-a707-32c04b90a0bf"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 10728,
+          "duration": 3539,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -80,7 +80,65 @@
       "_timeout": 2000
     },
     {
-      "uuid": "cdae3bb3-5ee7-419e-8f91-a594c958db48",
+      "uuid": "920a3501-66a9-4e92-a53f-10fe0e14cb22",
+      "title": "",
+      "fullFile": "cypress\\integration\\practiceForm\\end2end_spec.js",
+      "file": "cypress\\integration\\practiceForm\\end2end_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f53aaef5-8e1a-4863-9a3e-03afef1bdf04",
+          "title": "Practice Form - End to End Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Happy Path Test",
+              "fullTitle": "Practice Form - End to End Tests Happy Path Test",
+              "timedOut": null,
+              "duration": 8857,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#firstName').type('Scott');\ncy.get('#lastName').type('McKenzie');\ncy.get('#userEmail').type('testemail@testing.co.uk');\ncy.get('#genterWrapper > .col-md-9 > :nth-child(1)').click();\ncy.get('#userNumber').type('07123456789');\ncy.get('#dateOfBirthInput').click();\ncy.get('.react-datepicker__year-select').select('1980');\ncy.get('.react-datepicker__month-select').select('January');\ncy.get(':nth-child(1) > .react-datepicker__day--001').click();\ncy.get('.subjects-auto-complete__value-container').type('Test engineering');\ncy.get('#hobbiesWrapper > .col-md-9 > :nth-child(1)').click();\ncy.get('#currentAddress').type('21 Test Address \\nTest Town');\ncy.get('#stateCity-wrapper > :nth-child(2)').click();\ncy.get('#react-select-3-option-0').click();\ncy.get('#stateCity-wrapper > :nth-child(3)').click();\ncy.get('#react-select-4-option-2').click();\ncy.get('#submit').click();\ncy.get('.modal').should('be.visible');\ncy.get('#example-modal-sizes-title-lg').should('have.text', 'Thanks for submitting the form');\ncy.get('#closeLargeModal').click();\ncy.get('.modal').should('not.be.visible');",
+              "err": {},
+              "uuid": "d8b1da13-e835-439b-b30b-857b10c2c58c",
+              "parentUUID": "f53aaef5-8e1a-4863-9a3e-03afef1bdf04",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d8b1da13-e835-439b-b30b-857b10c2c58c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8857,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "796bacac-2c83-4e49-b229-09879dbd72ae",
       "title": "",
       "fullFile": "cypress\\integration\\practiceForm\\nameField_spec.js",
       "file": "cypress\\integration\\practiceForm\\nameField_spec.js",
@@ -89,7 +147,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "82759450-c1ee-4643-b321-df0890cf1321",
+          "uuid": "94767760-2f4d-427a-ba1c-dab2be63547c",
           "title": "Practice Form - Name Field Tests",
           "fullFile": "",
           "file": "",
@@ -100,17 +158,17 @@
               "title": "Verifys the User Name form label is correct",
               "fullTitle": "Practice Form - Name Field Tests Verifys the User Name form label is correct",
               "timedOut": null,
-              "duration": 2493,
+              "duration": 2450,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.visit(\"/\");\ncy.navigateToForm();\ncy.get('#userName-label').should('have.text', 'Name');",
+              "code": "cy.get('#userName-label').should('have.text', 'Name');",
               "err": {},
-              "uuid": "a43c00eb-6572-40f2-9051-6e5c54161e1a",
-              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "uuid": "9d183c91-7a94-4a9b-b409-64a9ff5e3ae4",
+              "parentUUID": "94767760-2f4d-427a-ba1c-dab2be63547c",
               "isHook": false,
               "skipped": false
             },
@@ -118,7 +176,7 @@
               "title": "Verifys the First Name form field shadow text is correct",
               "fullTitle": "Practice Form - Name Field Tests Verifys the First Name form field shadow text is correct",
               "timedOut": null,
-              "duration": 127,
+              "duration": 969,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -127,8 +185,8 @@
               "context": null,
               "code": "cy.get('#firstName').should('have.attr', 'placeholder', 'First Name');",
               "err": {},
-              "uuid": "fdf28b3e-bba1-488f-ae03-946c43b6b04a",
-              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "uuid": "a10f9073-c6ca-4c5e-a600-42d20f404456",
+              "parentUUID": "94767760-2f4d-427a-ba1c-dab2be63547c",
               "isHook": false,
               "skipped": false
             },
@@ -136,7 +194,7 @@
               "title": "Verifys the First Name form field can accept input",
               "fullTitle": "Practice Form - Name Field Tests Verifys the First Name form field can accept input",
               "timedOut": null,
-              "duration": 282,
+              "duration": 1144,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -145,8 +203,8 @@
               "context": null,
               "code": "cy.get(\"#firstName\").type(\"Scott\").should(\"have.value\", \"Scott\");",
               "err": {},
-              "uuid": "fe564afb-685c-423b-be03-e559dba70ecf",
-              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "uuid": "ba93bc55-e367-43a9-9375-33cc88ff97d1",
+              "parentUUID": "94767760-2f4d-427a-ba1c-dab2be63547c",
               "isHook": false,
               "skipped": false
             },
@@ -154,7 +212,7 @@
               "title": "Verifys the Last Name form field shadow text is correct",
               "fullTitle": "Practice Form - Name Field Tests Verifys the Last Name form field shadow text is correct",
               "timedOut": null,
-              "duration": 114,
+              "duration": 984,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -163,8 +221,8 @@
               "context": null,
               "code": "cy.get('#lastName').should('have.attr', 'placeholder', 'Last Name');",
               "err": {},
-              "uuid": "8b3817af-563a-443b-8e37-3fd8890b2dfd",
-              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "uuid": "f229ae59-1fee-49cc-a89d-b7e7002a1e79",
+              "parentUUID": "94767760-2f4d-427a-ba1c-dab2be63547c",
               "isHook": false,
               "skipped": false
             },
@@ -172,7 +230,7 @@
               "title": "Verifys the Last Name form field can accept input",
               "fullTitle": "Practice Form - Name Field Tests Verifys the Last Name form field can accept input",
               "timedOut": null,
-              "duration": 361,
+              "duration": 1099,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -181,8 +239,8 @@
               "context": null,
               "code": "cy.get(\"#lastName\").type(\"McKenzie\").should(\"have.value\", \"McKenzie\");",
               "err": {},
-              "uuid": "e4356ca2-8ade-4e5b-ba28-d44abb375ea2",
-              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "uuid": "64e9698f-4b98-49f6-9048-1ba309ad0b38",
+              "parentUUID": "94767760-2f4d-427a-ba1c-dab2be63547c",
               "isHook": false,
               "skipped": false
             },
@@ -190,7 +248,7 @@
               "title": "This is an example of a failed test",
               "fullTitle": "Practice Form - Name Field Tests This is an example of a failed test",
               "timedOut": null,
-              "duration": 7094,
+              "duration": 6515,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -199,30 +257,88 @@
               "context": "\"../cypress/snapshots/actual/practiceForm\\\\nameField_spec.js/Practice Form - Name Field Tests -- This is an example of a failed test (failed).png\"",
               "code": "cy.get(\"#lastName\").should(\"have.value\", \"FAIL\");",
               "err": {
-                "message": "AssertionError: Timed out retrying: expected '<input#lastName..mr-sm-2.form-control>' to have value 'FAIL', but the value was 'McKenzie'",
-                "estack": "AssertionError: Timed out retrying: expected '<input#lastName..mr-sm-2.form-control>' to have value 'FAIL', but the value was 'McKenzie'\n    at Context.eval (http://www.demoqa.com/__cypress/tests?p=cypress\\integration\\practiceForm\\nameField_spec.js:23:25)",
-                "diff": "- 'McKenzie'\n+ 'FAIL'\n"
+                "message": "AssertionError: Timed out retrying: expected '<input#lastName..mr-sm-2.form-control>' to have value 'FAIL', but the value was ''",
+                "estack": "AssertionError: Timed out retrying: expected '<input#lastName..mr-sm-2.form-control>' to have value 'FAIL', but the value was ''\n    at Context.eval (http://www.demoqa.com/__cypress/tests?p=cypress\\integration\\practiceForm\\nameField_spec.js:25:25)",
+                "diff": "+ 'FAIL'\n"
               },
-              "uuid": "d848120e-9bf4-49eb-a7b4-434dc1d20d78",
-              "parentUUID": "82759450-c1ee-4643-b321-df0890cf1321",
+              "uuid": "6e2cf48a-1b13-4698-aff6-1a689014ab25",
+              "parentUUID": "94767760-2f4d-427a-ba1c-dab2be63547c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a43c00eb-6572-40f2-9051-6e5c54161e1a",
-            "fdf28b3e-bba1-488f-ae03-946c43b6b04a",
-            "fe564afb-685c-423b-be03-e559dba70ecf",
-            "8b3817af-563a-443b-8e37-3fd8890b2dfd",
-            "e4356ca2-8ade-4e5b-ba28-d44abb375ea2"
+            "9d183c91-7a94-4a9b-b409-64a9ff5e3ae4",
+            "a10f9073-c6ca-4c5e-a600-42d20f404456",
+            "ba93bc55-e367-43a9-9375-33cc88ff97d1",
+            "f229ae59-1fee-49cc-a89d-b7e7002a1e79",
+            "64e9698f-4b98-49f6-9048-1ba309ad0b38"
           ],
           "failures": [
-            "d848120e-9bf4-49eb-a7b4-434dc1d20d78"
+            "6e2cf48a-1b13-4698-aff6-1a689014ab25"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 10471,
+          "duration": 13161,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "cae90fa4-fde4-4444-9ebe-e1bbe6cd1aee",
+      "title": "",
+      "fullFile": "cypress\\integration\\practiceForm\\visualRegression_spec.js",
+      "file": "cypress\\integration\\practiceForm\\visualRegression_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6801ce2f-0a7e-40f6-8438-18c50ff85b07",
+          "title": "Practice Form - Visual Regression Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify no visual regression on practice form",
+              "fullTitle": "Practice Form - Visual Regression Tests Verify no visual regression on practice form",
+              "timedOut": null,
+              "duration": 4695,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#firstName');\ncy.compareSnapshot('practiceForm', {\n  capture: 'fullPage',\n  errorThreshold: 0.0\n});",
+              "err": {},
+              "uuid": "18c74211-92aa-4a4d-9799-5f5838e2f256",
+              "parentUUID": "6801ce2f-0a7e-40f6-8438-18c50ff85b07",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "18c74211-92aa-4a4d-9799-5f5838e2f256"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4695,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
