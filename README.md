@@ -1,10 +1,14 @@
 # Cypress
 Browser test automation using Cypress.io
 
-- Automated accessibility testing
+- Automated accessibility testing with `cypress-axe`
 
-- Automated visual regression testing
+- Automated visual regression testing with `cypress-visual-regression`
 
 - Automated functional tests
 
-- Reporting with mochawesome
+- Reporting with `mochawesome`
+
+### Run all tests:
+
+- `npm run test`
